@@ -13,7 +13,6 @@ def states_accessor():
         raise RuntimeError(r.json())
     # print(r.json())
 
-
 def tracks_accessor():
     # From reading documentation, running this through is implied first!
     # flights_accessor()
