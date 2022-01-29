@@ -13,6 +13,7 @@ def states_accessor():
         raise RuntimeError(r.json())
     # print(r.json())
 
+
 def tracks_accessor():
     # From reading documentation, running this through is implied first!
     # flights_accessor()
@@ -23,8 +24,8 @@ def tracks_accessor():
     # print(r.json())
     # BUT this is de-activated :(
 
-def flights_accessor(*, start_time, end_time):
-    url = f"{ROOT_URL}/flights/all?begin=1641142800&end=1641148800"
+def flights_accessor(*, start_time_unix_int: int, end_time_unix_int: int):
+    url = f"{ROOT_URL}/flights/all?begin={start_time_unix_int}&end={end_time_unix_int}"
     r = requests.get(url)
     if not r.ok:
         raise RuntimeError(r.json())
